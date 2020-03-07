@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block center %}
+<div class="row" id="divMasterShowTimeSheetInformationDetailsID" style="display: block; border: 0px solid yellow;">
+	<form name="frmTimeSheet" id="frmTimeSheetID" role="form" action="" method="post" enctype="multipart/form-data">
+		<div class="col-md-9">
+			<div class="box box-solid bg-blue-box-boarder-gradient">
+				<div class="box-header bg-blue" id="boxHeader">
+					<i class="fa fa-clock-o"></i>
+					<h3 class="box-title " id="h3adduser">My Profile</h3>
+				</div>
+				<div class="box-body no-padding">
+					<div style="width: 97%;text-align: justify;line-height: 20px;text-indent: 2px; font-size:13px; margin:10px;">
+						<div class="box-body">
+							<div class="table-responsive" style="border: 0px solid red;height:auto" id="divShowTimeSheetInformationDetailsID">
+
+								<table border="2" style="width:100%" class="table color_border">
+									<tbody>
+									<tr id="HolidayrowID1">
+										<td><b>Employee Name</b></td>
+										<td>{{ profile_info.name }}</td>
+									</tr>
+									<tr id="HolidayrowID1">
+										<td><b>Employee ID</b></td>
+										<td>{{ profile_info.user }}</td>
+									</tr>
+									<tr id="HolidayrowID1">
+										<td><b>DOB</b></td>
+										<td>{{ profile_info.dob }}</td>
+									</tr>
+									<tr id="HolidayrowID1">
+										<td><b>Designation</b></td>
+										<td>{{ profile_info.designation }}</td>
+									</tr>
+									<tr id="HolidayrowID1">
+										<td><b>DOJ</b></td>
+										<td>{{ profile_info.doj }}</td>
+									</tr>
+									<tr id="HolidayrowID1">
+										<td><b>Contact Info</b></td>
+										<td>{{ profile_info.mobile }}</td>
+									</tr>
+									<tr id="HolidayrowID1">
+										<td><b>Manager ID</b></td>
+										<td>{{ profile_info.manager }}</td>
+									</tr>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}

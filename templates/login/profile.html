@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block center %}
+<div class="row" id="divMasterShowTimeSheetInformationDetailsID" style="display: block; border: 0px solid yellow;">
+	<form name="frmTimeSheet" id="frmTimeSheetID" role="form" action="" method="post" enctype="multipart/form-data">
+		<div class="col-md-9">
+			<div class="box box-solid bg-blue-box-boarder-gradient">
+				<div class="box-header bg-blue" id="boxHeader">
+					<i class="fa fa-clock-o"></i>
+					<h3 class="box-title " id="h3adduser">Update Profile</h3>
+				</div>
+				<div class="box-body no-padding">
+					<div style="width: 97%;text-align: justify;line-height: 20px;text-indent: 2px; font-size:13px; margin:10px;">
+						<div class="box-body">
+							<div class="table-responsive" style="border: 0px solid red;height:auto" id="divShowTimeSheetInformationDetailsID">
+
+								<form method="post" enctype="multipart/form-data">
+									{% csrf_token %}
+									<table border="2" style="width:100%" class="table color_border">
+									<tbody>
+										{% for field in form %}
+										<tr id="HolidayrowID1">
+											<td>{{ field.label_tag }}</td><td>{{ field }}</td>
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+									<button class="btn btn-primary" type="submit">Add Profile</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}

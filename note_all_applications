@@ -1,0 +1,20 @@
+applications
+    login
+    leave
+
+
+
+login
+
+    urls
+        search_profile   -> search_profile
+
+    view
+        search_profile
+            SearchForm
+
+    forms
+        SearchForm
+
+    models
+        Profile

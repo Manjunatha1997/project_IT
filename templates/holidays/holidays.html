@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block center %}
+<div class="row" id="divMasterShowTimeSheetInformationDetailsID" style="display: block; border: 0px solid yellow;">
+	<form name="frmTimeSheet" id="frmTimeSheetID" role="form" action="" method="post" enctype="multipart/form-data">
+		<div class="col-md-9">
+			<div class="box box-solid bg-blue-box-boarder-gradient">
+				<div class="box-header bg-blue" id="boxHeader">
+					<i class="fa fa-clock-o"></i>
+					<h3 class="box-title " id="h3adduser">Holiday List</h3>
+				</div>
+				<div class="box-body no-padding">
+					<div style="width: 97%;text-align: justify;line-height: 20px;text-indent: 2px; font-size:13px; margin:10px;">
+						<div class="box-body">
+							<div class="table-responsive" style="border: 0px solid red;height:auto" id="divShowTimeSheetInformationDetailsID">
+
+
+								<table border="2" style="width:100%" class="table color_border">
+									<tbody>
+										<tr class="bg-blue">
+											<th width="03%"> Sl# </th><th width="6%">Date</th><th width="10%"> Day </th><th width="10%"> Description </th>
+										</tr>
+
+										{% for holiday in holidays %}
+										<tr id="HolidayrowID1">
+											<td>{{ forloop.counter }}</td><td>{{ holiday.date }}</td><td>{{ holiday.day }}</td><td>{{ holiday.desc }}</td>
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}

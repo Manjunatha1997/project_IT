@@ -1,0 +1,196 @@
+
+{% load static %}
+
+{% load bootstrap4 %}       {# import bootstrap4/bootstrap3 #}
+{% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+{{ form.media }}            {# Adds date-picker required JS and CSS #}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Webpage</title>
+	<link rel="shortcut icon" href="" type="image/png">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link href="{% static 'css/AdminLTE.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/_all-skins.min.css' %}" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="{% static 'css/logo.css' %}" type="text/css" charset="utf-8">
+
+	<script type="text/javascript" src="images/LoginDisplayPupup.js.download"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body class="skin-blue sidebar-collapse">
+<div class="wrapper">
+<style>
+
+.navbar-nav > .user-menu .user-image {
+  float: left;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: -2px;
+}
+
+.main-header .logo {
+  display: block;
+  float: left;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  width: 230px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 15px;
+  font-weight: 300;
+}
+</style>
+
+<header class="main-header" style="background:#;">
+<a href="" class="logo"><img src="{% static 'images/logo.png' %}" height="90%" style="text-align: center;" class="logoImg"></a>
+<nav class="navbar navbar-static-top" role="navigation">
+  <div class="navbar-custom-menu">
+	<ul class="nav navbar-nav">
+		<li class="dropdown notifications-menu">
+
+		</li>
+		<li class="dropdown user-menu">
+		<a href="" class="dropdown-toggle" data-toggle="dropdown">
+		<img src="{{ profile }}" class="user-image" alt="Name"><span class="hidden-xs">{{ name }}</span>
+		</a>
+		</li>
+	</ul>
+  </div>
+</nav>
+</header>
+
+	<div class="content-wrapper" id="divContent" style="min-height: 751px;"/>
+	<section class="content" style="padding-top: 5px;">
+
+		<div class="row">
+			<div class="col-md-2" style="padding:3px;">
+				<div class="box box-solid" style="">
+					<a href="/">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #3499ff 0%, #3a39f5 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/4.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+								<span class="info-box-text" style="text-transform: none;">Home</span>
+							</div>
+						</div>
+					</a>
+					<a href="/auth/profile/">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #7bf2e9 0%, #b65eba 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/1.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+							<span class="info-box-text" style="text-transform: none;">Profile</span>
+							</div>
+						</div>
+					</a>
+					<a href="/auth/show_profile/">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #7bf2e9 0%, #b65eba 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/1.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+							<span class="info-box-text" style="text-transform: none;">Show Profile</span>
+							</div>
+						</div>
+					</a>
+					<a href="/leave/apply_leave/">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #b65eba 0%, #2e80e1 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/12.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+							<span class="info-box-text" style="text-transform: none;">Apply Leave</span>
+							</div>
+						</div>
+					</a>
+					<a href="/leave/approve_leave/">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #b65eba 0%, #2e80e1 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/12.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+							<span class="info-box-text" style="text-transform: none;">Approve Leave</span>
+							</div>
+						</div>
+					</a>
+					<a href="">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #6ee2f5 0%, #6454f0 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/13.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+							<span class="info-box-text" style="text-transform: none;">Report</span>
+							</div>
+						</div>
+					</a>
+					<a href="{% url 'date'%}">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #3499ff 0%, #3a39f5 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/4.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+								<span class="info-box-text" style="text-transform: none;">Timesheet</span>
+							</div>
+						</div>
+					</a>
+					<a href="/timer/approve_timesheet/">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #7bf2e9 0%, #b65eba 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/1.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+							<span class="info-box-text" style="text-transform: none;">Approve Timesheet</span>
+							</div>
+						</div>
+					</a>
+					<a href="/holidays/">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #3499ff 0%, #3a39f5 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/4.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+								<span class="info-box-text" style="text-transform: none;">Holidays</span>
+							</div>
+						</div>
+					</a>
+					<a href="/auth/search_profile/">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #3499ff 0%, #3a39f5 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/4.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+								<span class="info-box-text" style="text-transform: none;">Search Employees</span>
+							</div>
+						</div>
+					</a>
+
+					<a href="/contact/us/">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #3499ff 0%, #3a39f5 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/4.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+								<span class="info-box-text" style="text-transform: none;">Contact Us</span>
+							</div>
+						</div>
+					</a>
+
+					<a href="/auth/logout/">
+						<div class="box-body modulebox" style="padding: 0px;margin-bottom:2px;border-radius:4px;background:linear-gradient(to top left, #3499ff 0%, #3a39f5 100%);color:#fff;">
+							<span class="info-box-icon" style="height: 30px;line-height: 30px;width: 35px;">
+							<img src="{% static 'images/logout.png' %}" style="height: 90%;opacity:0.8;"></span>
+							<div class="info-box-content" style="margin-left: 30px;">
+								<span class="info-box-text" style="text-transform: none;">Logout</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+            {% block center %}
+
+            {% endblock %}
+		</div>
+	</section>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+Tracker:
+    login
+        c -> shows login page
+        /auth/profile/
+        /auth/show_profile/
+
+    home
+        /home/
+            Base base.html
+                 home.html -> extended from base.html
+    holidays
+        /holidays/
+
+    leave
+        /apply_leave/
+
+    populate_user.py -> script to auto generate users
+    populate_leave -> populate leaves in the table
+
+When user registers -> signup:
+    user
+    password
+    email
+
+After user registers -> he has to setup the profile
+    url -> /auth/profile/
+    show_profile
+
+select user from login_profile where manager='1000';
+Profile.objects.filter(manager='1000')
+
+###################
+select distinct manager from login_profile;
+
+##############################################
+Apply Leave:
+    start < end => -ve no. of days
+    If leave is already applied for the same date multiple times -> report
+    Do not allow employee to apply leave if leaves are not available
+
+    If applied leave date in holiday or saturday sunday -> ignore
+
+Insurance:
+    show the details of insurance
+    Sum : 700000
+    Dep: Parent, Spouse -> DOB, ADHAR
+    ID : Insurance ID
+    Claim:
+        Upload Documents
+        Give Forms
+        Bank
+
+Timesheet:
+
+
+# How to send email
+# DB ->
+# Deployement

@@ -1,0 +1,22 @@
+Project Name: Project Timesheet Tracker
+Technologies: Python, Django, MySQL, Linux/Windows, Bootstrap
+Tools		: PyCharm, Excel
+Description	: Tracker is a web project developed using django to login
+                  the timesheet submitted by every employee and to track leave applications.
+   		  Applications in Tracker:
+		  leave     -> For applying leaves
+		  timer     -> For timesheet submission
+	          search    -> For search employee profile
+		  holidays  -> For displaying company holidays
+	          dashboard -> For quick view on company news, birthdays, holidays, appraisals etc
+				
+		  Developed tracker app where employee can select date ranges to apply timesheet.
+	          Based on date range, table of form will be displayed where user can enter time details for each date.
+                  Timesheet forms will not be shown for holidays and weekoffs. Manager and employee will be automatically notified for any timesheet submission.
+			  
+		  Developed a leave application module using which employee can apply for leave by selecting date ranges and different leave types available.
+	          Manager will be notified and can proceed with approval/rejection of leave.
+
+	          Developed holidays app to view current year holidays. Same data will be used for validating timesheet and leave app.
+	          Search application helps to find employee profile based on employee number, employee name, manager name etc.
+	          Written faker scripts to populate fake data into models for testing purpose. 

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block center %}
+<div class="row" id="divMasterShowTimeSheetInformationDetailsID" style="display: block; border: 0px solid yellow;">
+	<form name="frmTimeSheet" id="frmTimeSheetID" role="form" action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="col-md-9">
+			<div class="box box-solid bg-blue-box-boarder-gradient">
+				<div class="box-header bg-blue" id="boxHeader">
+					<i class="fa fa-clock-o"></i>
+					<h3 class="box-title " id="h3adduser">Leave Application</h3>
+				</div>
+				<div class="box-body no-padding">
+					<div style="width: 97%;text-align: justify;line-height: 20px;text-indent: 2px; font-size:13px; margin:10px;">
+						<div class="box-body">
+							<div class="table-responsive" style="border: 0px solid red;height:auto" id="divShowTimeSheetInformationDetailsID">
+
+
+								<table border="2" style="width:100%" class="table color_border">
+									<tbody>
+										<tr class="bg-blue">
+											<th width="03%"> Sl# </th>
+											<th width="6%">Leave Type</th>
+											<th width="10%"> Prev Balance </th>
+											<th width="10%"> Total </th>
+											<th width="10%"> Used </th>
+											<th width="10%"> Balance </th>
+										</tr>
+
+										{% for leave in leaves %}
+										<tr id="HolidayrowID1">
+											<td>{{ forloop.counter }}</td>
+											<td>{{ leave.leave_type }}</td>
+											<td>{{ leave.preivous_balance }}</td>
+											<td>{{ leave.total }}</td>
+											<td>{{ leave.used }}</td>
+											<td>{{ leave.balance }}</td>
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="row">
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="alert alert-danger text-uppercase"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</div>
+</div>
+<div class="row" id="divMasterShowTimeSheetInformationDetailsID" style="display: block; border: 0px solid yellow;">
+	<div class="col-md-2">
+	</div>
+	<div class="col-md-10">
+	<form name="frmTimeSheet" id="frmTimeSheetID" role="form" action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="col-md-9">
+			<div class="box box-solid bg-blue-box-boarder-gradient">
+				<div class="box-header bg-blue" id="boxHeader">
+					<i class="fa fa-clock-o"></i>
+					<h3 class="box-title " id="h3adduser">Apply Leave</h3>
+				</div>
+				<div class="box-body no-padding">
+					<div style="width: 97%;text-align: justify;line-height: 20px;text-indent: 2px; font-size:13px; margin:10px;">
+						<div class="box-body">
+							<div class="table-responsive" style="border: 0px solid red;height:auto" id="divShowTimeSheetInformationDetailsID">
+
+								<table border="2" style="width:100%" class="table color_border">
+									<tbody>
+										{% for field in form %}
+										<tr id="HolidayrowID1">
+											<td width="50%">{{ field.label_tag }}</td>
+											<td>{{ field }}</td>
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+
+								<center><button class="btn btn-primary">Apply</button></center>
+								<div class="row">b</div>
+								<div class="row">b</div>
+								<div class="row">b</div>
+								<div class="row">b</div>
+								<div class="row">b</div>
+								<div class="row">b</div>
+								<div class="row">b</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</form>
+
+	</div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+in apply_leave application, we wil be able to apply leave..
+
+In the top of page, it showing all available leaves..(leaves_leaves)
++------------------+-------------+------+-----+---------+----------------+
+| Field            | Type        | Null | Key | Default | Extra          |
++------------------+-------------+------+-----+---------+----------------+
+| id               | int(11)     | NO   | PRI | NULL    | auto_increment |
+| user             | varchar(6)  | NO   |     | NULL    |                |
+| leave_type       | varchar(30) | NO   |     | NULL    |                |
+| preivous_balance | int(11)     | NO   |     | NULL    |                |
+| total            | int(11)     | NO   |     | NULL    |                |
+| used             | int(11)     | NO   |     | NULL    |                |
+| balance          | int(11)     | NO   |     | NULL    |                |
++------------------+-------------+------+-----+---------+----------------+
+
+Assume we are apply leave for 8 days.. Sick Leave
+1. Ignore all holidays and get count = 5
+2. x = Get balance sick leave from leave_leave
+3. if count < x:
+    Then apply
+4.
+
+
+
+###########
+x = leave.objects.get(user=request.user, leave_type=SEKECTED)
+x.balance > count:
+    x.balance = x.balance + count
+    x.total = x.total - count

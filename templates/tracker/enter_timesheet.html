@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block center %}
+<div class="row" id="divMasterShowTimeSheetInformationDetailsID" style="display: block; border: 0px solid yellow;">
+	<form name="frmTimeSheet" id="frmTimeSheetID" role="form" action="/timer/submit/" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="col-md-9">
+			<div class="box box-solid bg-blue-box-boarder-gradient">
+				<div class="box-header bg-blue" id="boxHeader">
+					<i class="fa fa-clock-o"></i>
+					<h3 class="box-title " id="h3adduser">Timesheet</h3>
+				</div>
+				<div class="box-body no-padding">
+					<div style="width: 97%;text-align: justify;line-height: 20px;text-indent: 2px; font-size:13px; margin:10px;">
+						<div class="box-body">
+							<div class="table-responsive" style="border: 0px solid red;height:auto" id="divShowTimeSheetInformationDetailsID">
+
+
+								<table border="2" style="width:100%" class="table color_border">
+									<tbody>
+										<tr class="bg-blue">
+											<th width="03%"> Sl# </th><th width="10%"> Project </th><th width="10%"> Hours </th><th width="10%"> Date </th><th width="10%"> Comments </th>
+										</tr>
+
+								{% for row in dates %}
+									<tr id="HolidayrowID1">
+										{% for col in row %}
+										{% if forloop.counter == 1 %}
+											<td>{{ col }}</td>
+										{% endif %}
+										{% if forloop.counter == 2 %}
+											<td>{{ col }}</td>
+										{% endif %}
+										{% if forloop.counter == 3 %}
+											<td style="width:10px"><input type="text" name="hours{{forloop.parentloop.counter}}"></td>
+										{% endif %}
+										{% if forloop.counter == 4 %}
+											<td><input type="text" name="date{{forloop.parentloop.counter}}" value="{{ col|date:'d-m-Y' }}"></td>
+										{% endif %}
+										{% if forloop.counter == 5 %}
+											<td><input type="text" name="desc{{forloop.parentloop.counter}}" value=""></td>
+										{% endif %}
+										{% endfor %}
+									</tr>
+								{% endfor %}
+									</tbody>
+								</table>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}

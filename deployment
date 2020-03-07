@@ -1,0 +1,100 @@
+Open Pycharm & Create a project with name pro1
+
+
+# register yourself to any website which will allow us to host our project
+
+pythonanywhere
+heroku
+
+create a bash console
+How to create?
+1. login to https://www.pythonanywhere.com
+2.  Goto consoles
+3. Click on Bash
+
+
+Run below commands
+#####################################################
+mkvirtualenv --python=python3.7 pro1
+#####################################################
+## virtual environment path
+echo $PWD/.virtualenvs/pro1
+Ex: /home/pythondjango123/.virtualenvs/pro1/
+#####################################################
+
+## Run below command(This shows list of packages installed)
+pip list
+
+# install django because by default pythonanywhere does not have django
+pip install django
+
+-------------------------------------------
+goto github.com
+register yourself..
+
+create a repository inside the github to upload the project to github(so that we can download it in pythonanywhere.com)
+
+goto pycharm where your project is located, run below steps to upload our project to github
+
+#####################################################
+git init
+git add *
+git commit -m "first commit"
+git remote add origin https://github.com/pythontrainingblr/pro1.git
+git push -u origin master
+#####################################################
+
+## goto bash terminal of pythonanywhere, and download project to pythonanywhere
+## git clone https://github.com/project.git
+git clone https://github.com/pythontrainingblr/pro1.git
+
+#####################################################
+## goto project folder and run
+cd pro1
+#####################################################
+python manage.py makemigrations
+python manage.py migrate
+#####################################################
+## get the project source path
+pwd
+# Ex: /home/pythondjango123/pro1
+#####################################################
+Goto ->
+Click on web
+click on -> below link
+Add a new web app -> Next ->
+Select
+	Manual configuration (including virtualenvs)
+	Next -> Select Python Version -> Python 3.7 -> Next
+	Source code:
+	source_code path (from aboeve steps)
+	Virtualenv:
+	env_path (from aboeve steps)
+
+
+#####################################################
+pythonanywhere_com_wsgi.py file (WSGI configuration file: option)
+import sys
+import os
+path = '/home/pythondjango123/PROJECT_NAME'
+# path = '/home/pythondjango123/pro1'
+if path not in sys.path:
+ sys.path.append(path)
+os.chdir(path)
+os.environ['DJANGO_SETTINGS_MODULE'] = 'pro1.settings'
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+#####################################################
+
+# goto bash console
+## ALLOWED_HOSTS edits in settings.py
+ALLOWED_HOSTS = ['pythondjango123.pythonanywhere.com']
+# ALLOWED_HOSTS = ['<account_name>.pythonanywhere.com']
+
+#####################################################
+Goto dashboard
+Reload the application in tab -> web
+
+
+

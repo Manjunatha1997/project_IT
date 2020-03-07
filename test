@@ -1,0 +1,27 @@
+
+
+- Install Anaconda
+- Open anaconda prompt and execute below commands
+(This pip must be anaconda pip)
+pip install django-bootstrap4
+pip install django-bootstrap-datepicker-plus
+pip install faker
+
+- Open the project in pycharm
+- Make sure for this project, interpreter is anaconda
+- Install XAMPP -> start mysql server
+- After starting mysql server, login to mysql
+- create a database..name -> track1 (Found in project settings.py)
+    create database track1
+- python manage.py makemigrations
+- python manage.py migrate
+
+
+- run the script -> populate_profile_leaves.py
+- run the script -> populate_holidays.py
+
+- python manage.py runserver
+- http://127.0.0.1:8000/
+
+Users:
+1000
